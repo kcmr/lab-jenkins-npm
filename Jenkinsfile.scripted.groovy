@@ -20,4 +20,6 @@ node {
       }
     }
   }
+
+  cleanWs cleanWhenFailure: false, notFailBuild: true
 }
