@@ -22,7 +22,16 @@ node {
     }
 
     stage('Run groovy script') {
-      sh 'groovy file.groovy'
+      List<String> shoppingList = [
+        'manzanas',
+        'naranjas',
+        'kiwis',
+        'patatas'
+      ]
+
+      shoppingList.each {
+        println "Buy: ${it}"
+      }
     }
 
     stage('Clean Workspace') {
