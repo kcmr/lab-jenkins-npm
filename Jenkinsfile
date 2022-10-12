@@ -1,10 +1,4 @@
 pipeline {
-  // agent any
-
-  // tools {
-  //   nodejs 'lts'
-  // }
-
   agent {
     docker {
       image 'node:18-slim'
