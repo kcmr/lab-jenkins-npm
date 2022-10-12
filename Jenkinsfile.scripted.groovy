@@ -19,7 +19,9 @@ node {
         sh 'npm t'
       }
     }
-  }
 
-  cleanWs cleanWhenFailure: false, notFailBuild: true
+    stage('Clean Workspace') {
+      cleanWs cleanWhenFailure: false, notFailBuild: true
+    }
+  }
 }
