@@ -21,7 +21,7 @@ node {
       }
 
       stage('Update deps') {
-        sh './scrips/update-deps.sh'
+        sh './scripts/update-deps.sh'
       }
     }
 
