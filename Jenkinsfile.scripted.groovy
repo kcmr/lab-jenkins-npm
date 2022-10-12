@@ -1,3 +1,4 @@
+/* groovylint-disable ImplicitClosureParameter */
 node {
   timestamps {
     stage('Checkout SCM') {
@@ -18,6 +19,10 @@ node {
       stage('Test') {
         sh 'npm t'
       }
+    }
+
+    stage('Run groovy script') {
+      sh 'groovy file.groovy'
     }
 
     stage('Clean Workspace') {
