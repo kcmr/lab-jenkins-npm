@@ -1,20 +1,20 @@
 pipeline {
   agent any
 
+  tools {
+    nodejs 'lts'
+  }
+
   stages {
     stage('Install') {
       steps {
-        nodejs('lts') {
-          sh 'npm ci'
-        }
+        sh 'npm ci'
       }
     }
 
     stage('Test') {
       steps {
-        nodejs('lts') {
-          sh 'npm t'
-        }
+        sh 'npm t'
       }
     }
   }
