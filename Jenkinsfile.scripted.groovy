@@ -19,6 +19,10 @@ node {
       stage('Test') {
         sh 'npm t'
       }
+
+      stage('Update deps') {
+        sh './scrips/update-deps.sh'
+      }
     }
 
     stage('Run groovy script') {
