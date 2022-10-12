@@ -12,7 +12,7 @@ node {
 
     withDockerContainer('node:18-slim') {
       stage('Install') {
-        sh 'npm ci'
+        sh 'npm ci --loglevel verbose'
       }
 
       stage('Test') {
