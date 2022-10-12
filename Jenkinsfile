@@ -1,16 +1,18 @@
 pipeline {
   agent none
 
-  nodejs('lts') {
-    stages {
-      stage('Install') {
-        steps {
+  stages {
+    stage('Install') {
+      steps {
+        nodejs('lts') {
           sh 'npm ci'
         }
       }
+    }
 
-      stage('Test') {
-        steps {
+    stage('Test') {
+      steps {
+        nodejs('lts') {
           sh 'npm t'
         }
       }
