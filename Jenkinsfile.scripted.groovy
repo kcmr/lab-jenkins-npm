@@ -12,7 +12,7 @@ node {
 
     withDockerContainer('node:18-slim') {
       stage('Install') {
-        sh 'npm i'
+        sh 'npm ci'
       }
 
       stage('Test') {
