@@ -1,7 +1,13 @@
 node {
   timestamps {
     stage('Checkout SCM') {
-      git branch: 'main', url: 'https://github.com/kcmr/lab-jenkins-npm.git'
+      checkout([
+        $class: 'GitSCM',
+        branches: [[name: '**']],
+        extensions: [],
+        userRemoteConfigs:
+        [[url: 'https://github.com/kcmr/lab-jenkins-npm.git']]
+      ])
     }
 
     withDockerContainer('node:18-slim') {
